@@ -1,0 +1,14 @@
+.buttonsIsFunk {
+	padding-block: 8px;
+	padding-inline: 15px;
+	border-radius: 8px;
+	border: none;
+	background-color: rgb(5, 5, 247);
+	color: aliceblue;
+	font-size: 17px;
+	font-weight: 600;
+	&:hover {
+		transition: all 0.3s ease;
+		background-color: rgb(68, 28, 246);
+	}
+}

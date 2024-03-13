@@ -7,8 +7,8 @@ interface ModalChildrenProps {
 
 const Modal: FC<ModalChildrenProps> = ({ children }) => {
 	return (
-		<div>
-			<div>{children}</div>
+		<div className={scss.modalContainer}>
+			<div className={scss.modalContent}>{children}</div>
 		</div>
 	);
 };

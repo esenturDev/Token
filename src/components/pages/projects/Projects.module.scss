@@ -1,0 +1,43 @@
+.products {
+	.content {
+		padding-block: 3rem;
+		.mapDivContainer {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			.mapsArray {
+				width: 220px;
+				height: auto;
+				padding-inline: 0.7rem;
+				padding-block: 0.7rem;
+				border-radius: 12px;
+				box-shadow: 0px 0px 15px black;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 0.8rem;
+				&:hover {
+					transition: all 0.4s ease;
+					width: 230px;
+					height: auto;
+				}
+				img {
+					width: 190px;
+					height: 190px;
+					border-radius: 50%;
+				}
+				h2 {
+					color: rgb(4, 7, 43);
+					font-weight: 725;
+					text-align: center;
+					font-size: 1.5rem;
+				}
+				p {
+					color: #2e2c2c;
+					font-size: 1rem;
+					font-weight: 500;
+				}
+			}
+		}
+	}
+}

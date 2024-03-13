@@ -6,6 +6,14 @@ import {
 
 const baseQuery = fetchBaseQuery({
 	baseUrl: "https://brand-store.up.railway.app",
+	prepareHeaders: (headers) => {
+		const localToken = localStorage.getItem('token');
+		console.log(localToken);
+		if(localToken) {
+			headers.set("Authorization", `Bearer ${localToken}`)
+		}
+		return headers;
+	}
 	// baseUrl: "https://api.elchocrud.pro/api/v1/70aca48aeedb89b448726d58be0ddac7/token_project",
 });
 

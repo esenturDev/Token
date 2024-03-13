@@ -12,16 +12,19 @@ export const LoginPages: FC<{
 	email: string;
 	password: string;
 	userName: string;
-}> = ({email, password, userName}) => {
+}> = ({ email, password, userName }) => {
 	const navigate = useNavigate();
 	const [emailValue, setEmailValue] = useState("");
 	const [passwordValue, setPasswordValue] = useState("");
 	const [userNameValue, setUserNameValue] = useState("");
 	const [postLogin] = usePostLoginMutation();
-	const { data } = useGetRegistrQuery();
-	console.log(data);
+	const { data: dataResult = [] } = useGetRegistrQuery();
+	console.log(dataResult);
 
-	const inputsValueResults = email === emailValue && password === passwordValue && userName === userNameValue
+	const inputsValueResults =
+		email === emailValue &&
+		password === passwordValue &&
+		userName === userNameValue;
 
 	const handlePostLogin = async () => {
 		const newData = {
@@ -38,8 +41,11 @@ export const LoginPages: FC<{
 			return;
 		}
 		if (inputsValueResults) {
+			const response = await postLogin(newData);
+			const responseData = await response.data;
+			localStorage.setItem("token", responseData.token)
 			localStorage.setItem("isAuthLogin", JSON.stringify(newData.email));
-			await postLogin(newData);
+			
 			navigate("/");
 		} else {
 			alert("Error");
@@ -58,7 +64,6 @@ export const LoginPages: FC<{
 					<Input
 						type="password"
 						value={passwordValue}
-
 						setData={setPasswordValue}
 						placeholder="Password..."
 					/>

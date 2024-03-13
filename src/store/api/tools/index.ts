@@ -27,8 +27,8 @@ const api = index.injectEndpoints({
 			invalidatesTags: ["project"],
 		}),
 		postLogin: builder.mutation<
-			Registr.PostRegistrResponse,
-			Registr.PostRegistrRequest
+			Registr.PostLoginResponse,
+			Registr.PostLoginRequest
 		>({
 			query: (newData) => ({
 				url: "login",

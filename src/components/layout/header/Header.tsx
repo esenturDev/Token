@@ -19,7 +19,7 @@ export const Header = () => {
 							<li>How tere works</li>
 							<li>Tere benefits</li>
 							<button>Help Center</button>
-							{/* <button onClick={removeResult}>delete Users</button> */}
+							<button onClick={removeResult}>delete Users</button>
 						</ul>
 					</nav>
 				</div>

@@ -9,10 +9,26 @@
 		justify-content: space-between;
 		align-items: center;
 		padding-inline: 5rem;
+		h2 {
+			color: #fff;
+			font-weight: 600;
+			font-size: 1.5rem;
+		}
 		.form {
 			display: flex;
 			align-items: center;
-			gap: 1rem;
+			gap: 0.6rem;
+			input {
+				width: 30.2rem;
+				height: 4.1rem;
+				border-radius: 4.3px;
+				border: none;
+				background-color: #ffffff;
+				color: #dadada;
+				font-size: 1.2rem;
+				font-weight: 600;
+				padding-left: 30px;
+			}
 		}
 	}
 }

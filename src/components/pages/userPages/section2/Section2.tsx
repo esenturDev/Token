@@ -10,7 +10,7 @@ const Section2 = () => {
 						Let’s go. Get a link <br /> to download the app.
 					</h2>
 					<div className={scss.form}>
-						<input type="text" />
+						<input type="text" placeholder="Enter mobile phone number" />
 						<CustomButton>APPLY TO DRIVE</CustomButton>
 					</div>
 				</div>

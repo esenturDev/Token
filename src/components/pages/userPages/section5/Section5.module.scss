@@ -1,0 +1,19 @@
+.section5 {
+	.content {
+		padding-block: 8rem;
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		p {
+			text-align: center;
+			color: #75bf7a;
+			font-weight: 800;
+			font-size: 2.8rem;
+			span {
+				color: #000000;
+				font-weight: 800;
+				font-size: 2.8rem;
+			}
+		}
+	}
+}

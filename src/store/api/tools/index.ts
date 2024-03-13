@@ -35,7 +35,7 @@ const api = index.injectEndpoints({
 				method: "POST",
 				body: newData,
 				// onSuccess: (newData: { _id: any; }) => {
-					
+
 				// 	localStorage.setItem("isAuthLogin", JSON.stringify(newData._id));
 				// 	// navigate("/");
 				// 	console.log("ppp");

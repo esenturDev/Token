@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { usePostRegistrMutation } from "../../../store/api/tools";
 import scss from "./RegistrPages.module.scss";
 import Input from "../../Ul/input/Input";
 import { Button } from "../../Ul/button/Button";
 import { useNavigate } from "react-router";
 
-const RegistrPages = () => {
+const RegistrPages: FC<{
+	email: string;
+	setEmail: (value: string) => void;
+	password: string;
+	setPassword: (value: string) => void;
+	userName: string;
+	setUserName: (value: string) => void;
+}> = ({email, setEmail, password, setPassword, userName, setUserName}) => {
 	const [postRegistr] = usePostRegistrMutation();
 	const navigate = useNavigate();
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const [userName, setUserName] = useState("");
 
 	const handleRegistr = async () => {
 		// const newData = {

@@ -1,0 +1,18 @@
+.section2 {
+	padding-block: 5rem;
+	.content {
+		width: 82.7rem;
+		height: 10.3rem;
+		border-radius: 10px;
+		background-color: #75bf7a;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-inline: 5rem;
+		.form {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
+	}
+}

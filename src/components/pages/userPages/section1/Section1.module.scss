@@ -1,0 +1,29 @@
+.section1 {
+	.content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.divContent1 {
+			margin-top: 6rem;
+			display: flex;
+			flex-direction: column;
+			align-items: start;
+			gap: 2.4rem;
+			h2 {
+				font-size: 3.7rem;
+				font-weight: 800;
+				color: black;
+				line-height: 4.1rem;
+			}
+			p {
+				color: #9e9da2;
+				font-size: 1.5rem;
+				font-weight: 500;
+			}
+			div {
+				display: flex;
+				gap: 2rem;
+			}
+		}
+	}
+}

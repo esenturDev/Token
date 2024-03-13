@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import Input from "../../Ul/input/Input";
 import scss from "./LoginPages.module.scss";
 import { useNavigate } from "react-router";
@@ -8,7 +8,11 @@ import {
 	usePostLoginMutation,
 } from "../../../store/api/tools";
 
-export const LoginPages = () => {
+export const LoginPages: FC<{
+	email: string;
+	password: string;
+	userName: string;
+}> = ({email, password, userName}) => {
 	const navigate = useNavigate();
 	const [emailValue, setEmailValue] = useState("");
 	const [passwordValue, setPasswordValue] = useState("");
@@ -17,15 +21,7 @@ export const LoginPages = () => {
 	const { data } = useGetRegistrQuery();
 	console.log(data);
 
-	// const resultToken = data?.find((itemId1) => itemId1.email === emailValue);
-	// const resultToken2 = data?.find(
-	// 	(itemId2) => itemId2.password === passwordValue
-	// );
-	// const resultToken3 = data?.find(
-	// 	(itemId3) => itemId3.userName === userNameValue
-	// );
-
-	// const result = data?.find((item) => item.email === emailValue && item.password === passwordValue && item.userName === userNameValue)
+	const inputsValueResults = email === emailValue && password === passwordValue && userName === userNameValue
 
 	const handlePostLogin = async () => {
 		const newData = {
@@ -37,23 +33,17 @@ export const LoginPages = () => {
 			emailValue.trim() === "" &&
 			passwordValue.trim() === "" &&
 			userNameValue.trim() === ""
-		)  {
+		) {
 			alert("input ка бир нерсе жазыныз!");
 			return;
 		}
-		try {
-			const result = data?.find((el) => el.email === emailValue && el.password === passwordValue && el.userName === userNameValue);
-			if(result) {
-				localStorage.setItem('isAuthLogin', JSON.stringify(result.id));
-				await postLogin(newData)
-				navigate('/');
-			} else {
-				alert('Error')
-			}
-		} catch (error) {
-			console.log(error);
+		if (inputsValueResults) {
+			localStorage.setItem("isAuthLogin", JSON.stringify(newData.email));
+			await postLogin(newData);
+			navigate("/");
+		} else {
+			alert("Error");
 		}
-		// localStorage.setItem("isAuthLogin", JSON.stringify(resultToken.id));
 	};
 	return (
 		<div>
@@ -68,6 +58,7 @@ export const LoginPages = () => {
 					<Input
 						type="password"
 						value={passwordValue}
+
 						setData={setPasswordValue}
 						placeholder="Password..."
 					/>
